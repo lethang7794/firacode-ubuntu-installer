@@ -1,9 +1,13 @@
 #!/usr/bin/env bash
-echo "----------------------"
-echo "Installing fontconfig..."
-echo "----------------------"
-apt install fontconfig
-echo "----------------------"
+
+if [ ! -x "$(command -v fc-cache)" ]; then
+  echo "----------------------"
+  echo "Installing fontconfig ..."
+  echo "----------------------"
+  apt update && apt install fontconfig
+  echo "----------------------"
+fi
+
 echo "Downloading Fira Code fonts ..."
 echo "----------------------"
 for type in Bold Light Medium Regular Retina SemiBold; do
