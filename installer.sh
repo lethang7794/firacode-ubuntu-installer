@@ -19,6 +19,9 @@ for type in Bold Light Medium Regular Retina SemiBold; do
         echo "Finished downloading FiraCode-${type}.otf"
     else
         echo "FiraCode-${type}.otf is already existed."
+        echo "Try to download newest version of FiraCode-${type}.otf"
+        wget -qO "${file_path}" "${file_url}"
+        echo "Finished downloading newest version of FiraCode-${type}.otf"
     fi;
 done
 echo "----------------------"
